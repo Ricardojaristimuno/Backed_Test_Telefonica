@@ -4,6 +4,7 @@
   "description": "Login",
   "main": "index.js",
   "scripts": {
+    "start db":"node createDB.js",
     "start": "nodemon index.js"
   },
   "author": "Pepecrat",

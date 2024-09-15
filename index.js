@@ -1,5 +1,4 @@
 const express = require('express');
-
 const requireAll = require('require-all');
 const app = express();
 const port= 3000;
@@ -29,9 +28,13 @@ for (const scriptName in scripts) {
   }
 }
 
+
+
+
 // Sincroniza los modelos con la base de datos
 sequelize.sync({ force: true }).then(async () => {
-  console.log('Base de Datos y tabla creada!');
+
+  console.log('tablas creadas');
 
   // Crear algunos datos de ejemplo
   const user = await User.create({
@@ -59,7 +62,7 @@ sequelize.sync({ force: true }).then(async () => {
     cutoff_date: '2024/09/27'
   });
 
-  console.log('Datos Creados!');
+  console.log('Datos Creados');
 }).catch(error => {
   console.error('Error al sincronizar la base de datos', error);
 });
