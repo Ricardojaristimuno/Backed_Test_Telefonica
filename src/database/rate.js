@@ -2,9 +2,9 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('./model');
 const User = require('./user');
 
-
+//***Definición de tabla de Cupos****
 const Cupos = sequelize.define('rates', {
-    // Definición de campos
+  
 
     id: {
       type: DataTypes.INTEGER,
@@ -50,8 +50,10 @@ const Cupos = sequelize.define('rates', {
     timestamps: false,
   });
 
+  //**Relación de Tabla usuario con Cupos **/
+
 User.hasMany(Cupos, { foreignKey: 'userId', onDelete: 'CASCADE', onUpdate: 'CASCADE' });
 Cupos.belongsTo(User, { foreignKey: 'userId' });
 
 
-  module.exports = Cupos;
+module.exports = Cupos;

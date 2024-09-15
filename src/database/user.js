@@ -1,8 +1,9 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('./model');
 
+//***Definición de tabla de Usuario****
 const User = sequelize.define('users', {
-    // Definición de campos
+
 
     id: {
       type: DataTypes.INTEGER,
